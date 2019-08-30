@@ -16,21 +16,19 @@ class ListView extends Component {
                         />
                     ))
                 ) : (
-                        <></>
-                    )}
+                    <></>
+                )}
 
-                <nav aria-label="Page navigation example">
+                {/* PAGINATION */}
+                <nav className="paginationBar">
                     <ul className="pagination">
-
-                        <li className="page-item">Previous</li>
-
+                        <li className="page-item page-link">Previous</li>
                         {this.props.pages.map(page => (
-                            <li className="page-item" onClick={this.props.paginate.bind(null, page)}>
+                            <li className="page-item page-link" onClick={this.props.paginate.bind(null, page)}>
                                 {page}
                             </li>
                         ))}
-
-                        <li className="page-item">Next</li>
+                        <li className="page-item page-link">Next</li>
                     </ul>
                 </nav>
             </div>
