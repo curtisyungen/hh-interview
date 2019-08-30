@@ -19,10 +19,18 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.viewBtn {
+  width: 75px;
 }
 
 .viewBtns {
   display: block !important;
+  position: absolute;
+  right: 40px;
+  top: 80px;
 }
 
 .view-true {
