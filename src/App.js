@@ -104,14 +104,14 @@ class App extends Component {
 
   paginate = (page) => {
     this.setState({
-      page: page,
+      currPage: page,
     }, () => {
       this.setHexDisplay();
     });
   }
 
   setHexDisplay = () => {
-    let page = this.state.page - 1;
+    let page = this.state.currPage - 1;
     let hexCodes = this.state.hexCodes;
     let hexDisplay = [];
     let startIdx = page * RESULTS_PER_PAGE;
