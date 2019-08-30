@@ -20,3 +20,7 @@ html {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.view-true {
+  background: lightgray;
+}
