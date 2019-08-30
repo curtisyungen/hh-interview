@@ -83,6 +83,7 @@ class App extends Component {
         <div className="colorDisplay">
             <Color 
               color={this.state.color}
+              getColor={null}
               size={"large"}
             />
         </div>
@@ -93,6 +94,7 @@ class App extends Component {
                 <Color
                   key={color}
                   color={color}
+                  getColor={this.getColor}
                   size={"small"}
                 />
               ))
