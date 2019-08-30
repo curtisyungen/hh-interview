@@ -18,7 +18,9 @@ class App extends Component {
       color: null,
       colorMenu: null,
       hexCodes: null,
+      hexDisplay: null,
       view: null,
+      page: null,
     }
   }
 
@@ -27,6 +29,8 @@ class App extends Component {
       color: DEFAULT_COLOR,
       colorMenu: COLOR_MENU,
       view: "detail",
+      page: 0,
+      pages: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     }, () => {
       this.getHexCodes();
     });
@@ -80,6 +84,29 @@ class App extends Component {
   clearDisplay = () => {
     this.setState({
       color: null,
+    });
+  }
+
+  paginate = (page) => {
+    this.setState({
+      page: page,
+    }, () => {
+      this.setHexDisplay();
+    });
+  }
+
+  setHexDisplay = () => {
+    let page = this.state.page;
+    let hexCodes = this.state.hexCodes;
+    let hexDisplay = [];
+    let startIdx = page * 10;
+    
+    for (var i=0; i<10; i++) {
+      hexDisplay.push(hexCodes[startIdx + i]);
+    }
+
+    this.setState({
+      hexDisplay: hexDisplay,
     });
   }
 
@@ -159,7 +186,9 @@ class App extends Component {
               <ListView
                 color={this.state.color}
                 getColor={this.getColor}
-                hexCodes={this.state.hexCodes}
+                hexDisplay={this.state.hexDisplay}
+                pages={this.state.pages}
+                paginate={this.paginate}
               />
             } />
           </Switch>
