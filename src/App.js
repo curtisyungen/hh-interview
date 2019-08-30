@@ -120,6 +120,7 @@ class App extends Component {
   clearDisplay = () => {
     this.setState({
       color: null,
+      suggestions: null,
     });
   }
 
