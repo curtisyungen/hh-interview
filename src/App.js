@@ -67,7 +67,7 @@ class App extends Component {
     let hexCodes = this.state.hexCodes;
     let pages = [];
 
-    for (var c=0; c<hexCodes.length / 10; c++) {
+    for (var c=1; c<hexCodes.length / 10; c++) {
       pages.push(c);
     }
 
