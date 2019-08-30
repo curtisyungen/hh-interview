@@ -1,5 +1,11 @@
 .listView {
     display: flex;
     flex-wrap: wrap;
+    height: fit-content;
     max-width: 60%;
+}
+
+.paginationBar {
+    margin-top: 10px;
+    width: 100%;
 }
