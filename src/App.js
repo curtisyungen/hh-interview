@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar/navbar";
 import Sidebar from "./components/Sidebar/sidebar";
-import Color from "./components/Color/color";
+import DetailView from "./pages/DetailView";
+import ListView from "./pages/ListView";
 import './App.css';
 
 const DEFAULT_COLOR = "Blue";
@@ -93,67 +95,45 @@ class App extends Component {
 
         {/* VIEW TOGGLE BUTTONS */}
         <div className="btn-group viewBtns">
-          <button
-            type="button"
+          <a
             className={`btn btn-outline-dark view-${this.state.view === "detail"}`}
-            onClick={this.toggleView.bind(null, "detail")}
+            href="/detail"
           >
             Detail
-            </button>
-          <button
-            type="button"
+          </a>
+          <a
             className={`btn btn-outline-dark view-${this.state.view === "list"}`}
-            onClick={this.toggleView.bind(null, "list")}
+            href="/list"
           >
             List
-            </button>
+          </a>
         </div>
 
-        {/* MAIN DISPLAY */}
-        {this.state.view === "detail" ? (
-
-          // DETAIL VIEW
-
-          <div className="colorDisplay">
-            {this.state.color ? (
-              <Color
+        <Switch>
+            <Route exact path="/" render={() =>
+              <DetailView
                 color={this.state.color}
                 getColor={this.getColor}
-                size={"large"}
+                clearDisplay={this.clearDisplay}
               />
-            ) : (
-                <></>
-              )}
-          </div>
-        ) : (
+            } />
 
-          // LIST VIEW
+          <Route exact path="/detail" render={() =>
+              <DetailView
+                color={this.state.color}
+                getColor={this.getColor}
+                clearDisplay={this.clearDisplay}
+              />
+            } />
 
-          <div className="colorList">
-            {this.state.hexCodes && this.state.hexCodes.length > 0 ? (
-              this.state.hexCodes.map(color => (
-                <Color
-                  key={color}
-                  color={color}
-                  getColor={this.getColor}
-                  toggleView={this.toggleView}
-                  size={"small"}
-                />
-              ))
-            ) : (
-                <></>
-              )}
-          </div>
-        )}
-
-        {/* CLEAR BUTTON */}
-        <button
-          className="btn btn-outline-dark clearBtn"
-          onClick={this.clearDisplay}
-        >
-          Clear
-        </button>
-
+          <Route exact path="/list" render={() =>
+              <ListView
+                color={this.state.color}
+                getColor={this.getColor}
+                hexCodes={this.state.hexCodes}
+              />
+            } />
+        </Switch>
       </div>
     )
   }

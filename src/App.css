@@ -5,8 +5,8 @@ html {
 }
 
 .colorDisplay {
+  height: fit-content;
   margin: 20px;
-  max-height: 300px;
   min-width: 300px;
 }
 
@@ -19,6 +19,10 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.viewBtns {
+  display: block !important;
 }
 
 .view-true {
