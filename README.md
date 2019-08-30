@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./client/src/images/logo.png" alt="logo" />
+  <img src="./src/images/logo-symbol.svg" alt="logo" />
 </p>
 
 # GRE Argot Tester
