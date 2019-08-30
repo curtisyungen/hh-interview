@@ -7,10 +7,12 @@
     border-right: 1px solid black;
     color: black;
     height: auto;
-    margin-right: 20px;
+    margin-right: 10px;
     min-height: 100vh;
     padding: 10px;
-    width: 200px;
+    position: absolute;
+    top: 68px;
+    width: 220px;
 }
 
 @media only screen and (max-width: 520px) {
