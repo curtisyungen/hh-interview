@@ -15,6 +15,7 @@ class App extends Component {
     this.state = {
       color: null,
       colorMenu: null,
+      hexCodes: null,
     }
   }
 
@@ -22,12 +23,38 @@ class App extends Component {
     this.setState({
       color: DEFAULT_COLOR,
       colorMenu: COLOR_MENU,
+    }, () => {
+      this.getHexCodes();
     });
   }
 
+  // Generates an array of 100 hex codes to populate color inventory
+  getHexCodes = () => {
+    let hexCodes = [];
+    let characters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
+
+    for (var code=0; code<100; code++) {
+      for (var char=0; char<6; char++) {
+        let code = "";
+        let randIdx = Math.floor(Math.random() * characters.length);
+        code += characters(randIdx);
+      }
+
+      hexCodes.push(code);
+    }
+
+    this.setState({
+      hexCodes: hexCodes,
+    }, () => {
+      console.log(this.state);
+    });
+  }
+
+  // Sets color when option is clicked in Sidebar menu
+  // Receives color name as string
   getColor = (color) => {
     this.setState({
-      color: color,
+      color: color.toLowerCase(),
     });
   }
 
@@ -43,13 +70,22 @@ class App extends Component {
         />
 
         <div className="colorDisplay">
-          {this.state.color ? (
             <Color 
-              color={this.state.color.toLowerCase()}
+              color={this.state.color}
             />
-          ) : (
-            <></>
-          )}
+        </div>
+
+        <div className="colorList">
+            {this.state.hexCodes && this.state.hexCodes.length > 0 ? (
+              this.state.hexCodes.map(color => (
+                <Color
+                  key={color}
+                  color={color}
+                />
+              ))
+            ) : (
+              <></>
+            )}
         </div>
 
       </div>
