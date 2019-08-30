@@ -193,6 +193,7 @@ class App extends Component {
               <DetailView
                 color={this.state.color}
                 getColor={this.getColor}
+                suggestions={this.state.suggestions}
                 clearDisplay={this.clearDisplay}
               />
             } />
