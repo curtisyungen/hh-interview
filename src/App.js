@@ -84,32 +84,33 @@ class App extends Component {
 
   render() {
     return (
-      <div className="mainContainer">
+      <Router>
+        <div className="mainContainer">
 
-        <Navbar />
+          <Navbar />
 
-        <Sidebar
-          getColor={this.getColor}
-          colorMenu={this.state.colorMenu}
-        />
+          <Sidebar
+            getColor={this.getColor}
+            colorMenu={this.state.colorMenu}
+          />
 
-        {/* VIEW TOGGLE BUTTONS */}
-        <div className="btn-group viewBtns">
-          <a
-            className={`btn btn-outline-dark view-${this.state.view === "detail"}`}
-            href="/detail"
-          >
-            Detail
+          {/* VIEW TOGGLE BUTTONS */}
+          <div className="btn-group viewBtns">
+            <a
+              className={`btn btn-outline-dark view-${this.state.view === "detail"}`}
+              href="/detail"
+            >
+              Detail
           </a>
-          <a
-            className={`btn btn-outline-dark view-${this.state.view === "list"}`}
-            href="/list"
-          >
-            List
+            <a
+              className={`btn btn-outline-dark view-${this.state.view === "list"}`}
+              href="/list"
+            >
+              List
           </a>
-        </div>
+          </div>
 
-        <Switch>
+          <Switch>
             <Route exact path="/" render={() =>
               <DetailView
                 color={this.state.color}
@@ -118,7 +119,7 @@ class App extends Component {
               />
             } />
 
-          <Route exact path="/detail" render={() =>
+            <Route exact path="/detail" render={() =>
               <DetailView
                 color={this.state.color}
                 getColor={this.getColor}
@@ -126,15 +127,16 @@ class App extends Component {
               />
             } />
 
-          <Route exact path="/list" render={() =>
+            <Route exact path="/list" render={() =>
               <ListView
                 color={this.state.color}
                 getColor={this.getColor}
                 hexCodes={this.state.hexCodes}
               />
             } />
-        </Switch>
-      </div>
+          </Switch>
+        </div>
+      </Router>
     )
   }
 }
