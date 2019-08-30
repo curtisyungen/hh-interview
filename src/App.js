@@ -16,6 +16,7 @@ class App extends Component {
       color: null,
       colorMenu: null,
       hexCodes: null,
+      view: null,
     }
   }
 
@@ -23,6 +24,7 @@ class App extends Component {
     this.setState({
       color: DEFAULT_COLOR,
       colorMenu: COLOR_MENU,
+      view: "detail",
     }, () => {
       this.getHexCodes();
     });
@@ -32,12 +34,12 @@ class App extends Component {
   getHexCodes = () => {
     let hexCodes = [];
     let chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
-    
+
     let code, char, randIdx;
     while (hexCodes.length < 100) {
       code = "#";
 
-      for (var c=0; c<6; c++) {
+      for (var c = 0; c < 6; c++) {
         randIdx = Math.floor(Math.random() * chars.length);
         char = chars[randIdx];
         code += char;
@@ -57,12 +59,21 @@ class App extends Component {
 
   // Sets color when option is clicked in Sidebar menu
   // Receives color name as string
+  // Toggles Detail View
   getColor = (color) => {
     this.setState({
       color: color.toLowerCase(),
+      view: "detail",
     });
   }
 
+  toggleView = (view) => {
+    this.setState({
+      view: view,
+    });
+  }
+
+  // Clears main display of all colors
   clearDisplay = () => {
     this.setState({
       color: null,
@@ -75,34 +86,67 @@ class App extends Component {
 
         <Navbar />
 
-        <Sidebar 
+        <Sidebar
           getColor={this.getColor}
           colorMenu={this.state.colorMenu}
         />
 
-        <div className="colorDisplay">
-            <Color 
-              color={this.state.color}
-              getColor={this.getColor}
-              size={"large"}
-            />
+        {/* VIEW TOGGLE BUTTONS */}
+        <div className="btn-group viewBtns">
+          <button
+            type="button"
+            className={`btn btn-outline-dark view-${this.state.view === "detail"}`}
+            onClick={this.toggleView.bind(null, "detail")}
+          >
+            Detail
+            </button>
+          <button
+            type="button"
+            className={`btn btn-outline-dark view-${this.state.view === "list"}`}
+            onClick={this.toggleView.bind(null, "list")}
+          >
+            List
+            </button>
         </div>
 
-        <div className="colorList">
+        {/* MAIN DISPLAY */}
+        {this.state.view === "detail" ? (
+
+          // DETAIL VIEW
+
+          <div className="colorDisplay">
+            {this.state.color ? (
+              <Color
+                color={this.state.color}
+                getColor={this.getColor}
+                size={"large"}
+              />
+            ) : (
+                <></>
+              )}
+          </div>
+        ) : (
+
+          // LIST VIEW
+
+          <div className="colorList">
             {this.state.hexCodes && this.state.hexCodes.length > 0 ? (
               this.state.hexCodes.map(color => (
                 <Color
                   key={color}
                   color={color}
                   getColor={this.getColor}
+                  toggleView={this.toggleView}
                   size={"small"}
                 />
               ))
             ) : (
-              <></>
-            )}
-        </div>
+                <></>
+              )}
+          </div>
+        )}
 
+        {/* CLEAR BUTTON */}
         <button
           className="btn btn-outline-dark clearBtn"
           onClick={this.clearDisplay}
