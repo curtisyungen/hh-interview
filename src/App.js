@@ -21,6 +21,7 @@ class App extends Component {
       hexDisplay: null,
       view: null,
       page: null,
+      pages: null,
     }
   }
 
@@ -29,8 +30,7 @@ class App extends Component {
       color: DEFAULT_COLOR,
       colorMenu: COLOR_MENU,
       view: "detail",
-      page: 0,
-      pages: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      page: 1,
     }, () => {
       this.getHexCodes();
     });
@@ -59,7 +59,20 @@ class App extends Component {
     this.setState({
       hexCodes: hexCodes,
     }, () => {
-      console.log(this.state);
+      this.getPages();
+    });
+  }
+
+  getPages = () => {
+    let hexCodes = this.state.hexCodes;
+    let pages = [];
+
+    for (var c=0; c<hexCodes.length / 10; c++) {
+      pages.push(c);
+    }
+
+    this.setState({
+      pages: pages,
     });
   }
 
