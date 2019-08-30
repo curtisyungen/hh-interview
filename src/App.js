@@ -69,6 +69,7 @@ class App extends Component {
     });
   }
 
+  // Toggles between Detail and List views
   toggleView = (view) => {
     this.setState({
       view: view,
@@ -96,19 +97,35 @@ class App extends Component {
 
           {/* VIEW TOGGLE BUTTONS */}
           <div className="btn-group viewBtns">
-            <a
+            <button
               className={`btn btn-outline-dark view-${this.state.view === "detail"}`}
-              href="/detail"
+              onClick={this.toggleView.bind(null, "detail")}
             >
               Detail
-          </a>
-            <a
+          </button>
+            <button
               className={`btn btn-outline-dark view-${this.state.view === "list"}`}
-              href="/list"
+              onClick={this.toggleView.bind(null, "list")}
             >
               List
-          </a>
+          </button>
           </div>
+
+          {this.state.view === "detail" ? (
+            <Redirect 
+              to="/detail"
+            />
+          ) : (
+            <></>
+          )}       
+
+          {this.state.view === "list" ? (
+            <Redirect 
+              to="/list"
+            />
+          ) : (
+            <></>
+          )}      
 
           <Switch>
             <Route exact path="/" render={() =>
