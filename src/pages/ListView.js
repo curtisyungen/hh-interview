@@ -6,8 +6,8 @@ class ListView extends Component {
     render() {
         return (
             <div className="listView">
-                {this.props.hexCodes && this.props.hexCodes.length > 0 ? (
-                    this.props.hexCodes.map(color => (
+                {this.props.hexDisplay && this.props.hexDisplay.length > 0 ? (
+                    this.props.hexDisplay.map(color => (
                         <Color
                             key={color}
                             color={color}
@@ -16,16 +16,21 @@ class ListView extends Component {
                         />
                     ))
                 ) : (
-                    <></>
-                )}
+                        <></>
+                    )}
 
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    <ul className="pagination">
+
+                        <li className="page-item">Previous</li>
+
+                        {this.props.pages.map(page => (
+                            <li className="page-item" onClick={this.props.paginate.bind(null, page)}>
+                                {page}
+                            </li>
+                        ))}
+
+                        <li className="page-item">Next</li>
                     </ul>
                 </nav>
             </div>
