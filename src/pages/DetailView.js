@@ -7,24 +7,30 @@ class DetailView extends Component {
     render() {
         return (
             <div className="detailView">
-                <Color
-                    color={this.props.color}
-                    getColor={this.props.getColor}
-                    size={"large"}
-                />
+                {this.props.color ? (
+                    <span>
+                        <Color
+                            color={this.props.color}
+                            getColor={this.props.getColor}
+                            size={"large"}
+                        />
 
-                <Suggestions 
-                    suggestions={this.props.suggestions}
-                    getColor={this.props.getColor}
-                />
+                        <Suggestions 
+                            suggestions={this.props.suggestions}
+                            getColor={this.props.getColor}
+                        />
 
-                {/* CLEAR BUTTON */}
-                <button
-                    className="btn btn-outline-dark clearBtn"
-                    onClick={this.props.clearDisplay}
-                >
-                    Clear
-                </button>
+                        {/* CLEAR BUTTON */}
+                        <button
+                            className="btn btn-outline-dark clearBtn"
+                            onClick={this.props.clearDisplay}
+                        >
+                            Clear
+                        </button>
+                    </span>
+                ) : (
+                    <></>
+                )}                
             </div>
         )
     }

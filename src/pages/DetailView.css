@@ -1,9 +1,10 @@
 .clearBtn {
-    margin: 5px auto;
+    margin: 5px;
     width: 200px;
 }
 
 .detailView {
-    margin: 5px auto;
-    max-width: 500px;
+    margin: 5px 300px;
+    max-width: 100%;
+    text-align: center;
 }

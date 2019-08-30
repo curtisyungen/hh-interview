@@ -3,6 +3,7 @@
     border-radius: 12px;
     height: fit-content;
     margin: 15px;
+    margin-left: 0px;
     width: fit-content;
 }
 
@@ -17,19 +18,18 @@
     background: #fff;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    height: 30px;
-    padding-left: 10px;
+    height: 40px;
 }
 
 .large {
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 668px;
 }
 
 .small {
     cursor: pointer;
-    height: 150px;
-    width: 150px;
+    height: 80px;
+    width: 120px;
 }
 
 @media only screen and (max-width: 768px) {
