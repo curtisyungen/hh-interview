@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
+    margin: 5px auto;
     max-width: 60%;
 }
 
