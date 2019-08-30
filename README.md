@@ -7,8 +7,9 @@
 
 August 2019
 
+This is my solution to the Helpful Human Interview Challenge. Directions for the challenge can be found here: https://github.com/HelpfulHuman/interview-challenge.
 
-Check out the project here: https://hh-interview.herokuapp.com.
+Check out my deployed project here: https://hh-interview.herokuapp.com.
 
 <hr/>
 
