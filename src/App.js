@@ -36,7 +36,7 @@ class App extends Component {
     let code, char, randIdx;
     while (hexCodes.length < 100) {
       code = "#";
-      
+
       for (var c=0; c<6; c++) {
         randIdx = Math.floor(Math.random() * chars.length);
         char = chars[randIdx];
@@ -63,6 +63,12 @@ class App extends Component {
     });
   }
 
+  clearDisplay = () => {
+    this.setState({
+      color: null,
+    });
+  }
+
   render() {
     return (
       <div className="mainContainer">
@@ -77,6 +83,7 @@ class App extends Component {
         <div className="colorDisplay">
             <Color 
               color={this.state.color}
+              size={"large"}
             />
         </div>
 
@@ -86,12 +93,20 @@ class App extends Component {
                 <Color
                   key={color}
                   color={color}
+                  size={"small"}
                 />
               ))
             ) : (
               <></>
             )}
         </div>
+
+        <button
+          className="btn btn-outline-dark clearBtn"
+          onClick={this.clearDisplay}
+        >
+          Clear
+        </button>
 
       </div>
     )

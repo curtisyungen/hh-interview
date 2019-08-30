@@ -11,6 +11,11 @@ html {
   min-width: 300px;
 }
 
+.colorList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: row;
