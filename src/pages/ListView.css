@@ -5,6 +5,10 @@
     max-width: 60%;
 }
 
+.page-item {
+    cursor: pointer;
+}
+
 .paginationBar {
     margin-top: 10px;
     width: 100%;
