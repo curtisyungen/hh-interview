@@ -8,7 +8,7 @@ import './App.css';
 
 const DEFAULT_COLOR = "Blue";
 const COLOR_MENU = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray"];
-const RESULTS_PER_PAGE = 25;
+const RESULTS_PER_PAGE = 20;
 
 class App extends Component {
 
@@ -111,7 +111,7 @@ class App extends Component {
   }
 
   setHexDisplay = () => {
-    let page = this.state.page;
+    let page = this.state.page - 1;
     let hexCodes = this.state.hexCodes;
     let hexDisplay = [];
     let startIdx = page * RESULTS_PER_PAGE;
