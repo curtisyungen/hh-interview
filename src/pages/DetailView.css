@@ -1,3 +1,8 @@
+.clearBtn {
+    margin: 5px auto;
+    width: 200px;
+}
+
 .detailView {
     margin: 5px auto;
     max-width: 500px;
