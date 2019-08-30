@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/images/logo-symbol.svg" alt="logo" />
+  <img src="./src/images/logo.png" alt="logo" />
 </p>
 
 # Helpful Human Interview Challenge
