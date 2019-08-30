@@ -1,22 +1,11 @@
 import React, { Component } from "react";
+import "./color.css";
 
 class Color extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-
-        }
-    }
-
-    componentDidMount = () => {
-        
-    }
-
     render() {
         return (
-            <div className="colorContainer">
-
+            <div className="color" style={{background: this.props.color}}>
+                {this.props.color}
             </div>
         )
     }

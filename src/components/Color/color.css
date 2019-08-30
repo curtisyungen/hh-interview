@@ -1,37 +1,8 @@
-.bookIcon {
-    cursor: pointer;
-    height: 20px;
-    position: absolute;
-    right: 40px;
-    top: 10px;
-}
-
-.counter {
-    bottom: 0;
+.color {
+    border: 1px solid black;
+    border-radius: 4px;
     color: black;
-    font-size: 13px;
-    left: 10px;
-    position: absolute;
-    top: 10px;
-}
-
-.speakIcon {
-    cursor: pointer;
-    height: 20px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
-
-.word {
-    color: black;
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.wordContainer {
-    background: lightgray;
-    padding: 15px;
-    position: relative;
-    width: 100%;
+    display: inline-block;
+    height: 300px;
+    width: 300px;
 }

@@ -1,9 +1,15 @@
+.colorMenu {
+    cursor: pointer;
+}
+
 .sidebar {
     background: lightgray;
     border-right: 1px solid black;
     color: black;
-    height: 100%;
-    left: 0;
-    position: absolute;
+    height: auto;
+    margin-right: 20px;
+    min-height: 100vh;
+    padding: 10px;
+    /* position: absolute; */
     width: 200px;
 }
