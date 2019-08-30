@@ -103,13 +103,13 @@ class App extends Component {
           /* ====================================================== */}
           <div className="btn-group viewBtns">
             <button
-              className={`btn btn-outline-dark view-${this.state.view === "detail"}`}
+              className={`btn btn-outline-dark viewBtn view-${this.state.view === "detail"}`}
               onClick={this.toggleView.bind(null, "detail")}
             >
               Detail
             </button>
             <button
-              className={`btn btn-outline-dark view-${this.state.view === "list"}`}
+              className={`btn btn-outline-dark viewBtn view-${this.state.view === "list"}`}
               onClick={this.toggleView.bind(null, "list")}
             >
               List
