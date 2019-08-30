@@ -85,6 +85,27 @@ class App extends Component {
     this.setState({
       color: color.toLowerCase(),
       view: "detail",
+    }, () => {
+      this.getSuggestions(color);
+    });
+  }
+
+  getSuggestions = (color) => {
+    let suggestions = [];
+    let hexCodes = this.state.hexCodes;
+    let idx = -1;
+    for (var h in hexCodes) {
+      if (hexCodes[h] === color) {
+        idx = h;
+      }
+    }
+
+    for (var i=0; i<5; i++) {
+      suggestions.push(hexCodes[idx + i]);
+    }
+
+    this.setState({
+      suggestions: suggestions,
     });
   }
 
