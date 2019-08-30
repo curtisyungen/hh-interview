@@ -1,4 +1,5 @@
 .listView {
-    display: inline-block;
-    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 60%;
 }
