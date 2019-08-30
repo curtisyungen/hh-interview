@@ -8,7 +8,7 @@ import './App.css';
 
 const DEFAULT_COLOR = "Blue";
 const COLOR_MENU = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray"];
-const RESULTS_PER_PAGE = 20;
+const RESULTS_PER_PAGE = 25;
 
 class App extends Component {
 
@@ -21,7 +21,7 @@ class App extends Component {
       hexCodes: null,
       hexDisplay: null,
       view: null,
-      currPage: 1,
+      currPage: null,
       pages: null,
     }
   }
@@ -34,6 +34,7 @@ class App extends Component {
       currPage: 1,
     }, () => {
       this.getHexCodes();
+      this.setHexDisplay();
     });
   }
 
@@ -68,7 +69,7 @@ class App extends Component {
     let hexCodes = this.state.hexCodes;
     let pages = [];
 
-    for (var c=1; c<hexCodes.length / RESULTS_PER_PAGE; c++) {
+    for (var c=1; c<=hexCodes.length / RESULTS_PER_PAGE; c++) {
       pages.push(c);
     }
 
