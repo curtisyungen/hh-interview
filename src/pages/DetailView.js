@@ -5,7 +5,7 @@ import Color from "../components/Color/color";
 class DetailView extends Component {
     render() {
         return (
-            <div>
+            <div className="detailView">
                 <Color
                     color={this.props.color}
                     getColor={this.props.getColor}
