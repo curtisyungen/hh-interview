@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Color from "../components/Color/color";
+import Suggestions from "../components/Suggestions/suggestions";
 import "./DetailView.css";
 
 class DetailView extends Component {
@@ -10,6 +11,11 @@ class DetailView extends Component {
                     color={this.props.color}
                     getColor={this.props.getColor}
                     size={"large"}
+                />
+
+                <Suggestions 
+                    suggestions={this.props.suggestions}
+                    getColor={this.props.getColor}
                 />
 
                 {/* CLEAR BUTTON */}
