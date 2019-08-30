@@ -21,7 +21,8 @@ Check out my deployed project here: https://hh-interview.herokuapp.com.
 ### NPM Dependencies
 1) express
 2) react-dom
-3) react-responsive-modal
+3) react-router-dom
+4) react-responsive-modal
 
 <hr/>
 
