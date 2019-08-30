@@ -94,13 +94,13 @@ class App extends Component {
     let suggestions = [];
     let hexCodes = this.state.hexCodes;
     let idx = -1;
-    for (var h in hexCodes) {
+    for (var h=0; h<hexCodes.length; h++) {
       if (hexCodes[h] === color) {
         idx = h;
       }
     }
 
-    for (var i=0; i<5; i++) {
+    for (var i=1; i<6; i++) {
       suggestions.push(hexCodes[idx + i]);
     }
 
