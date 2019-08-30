@@ -31,16 +31,21 @@ class App extends Component {
   // Generates an array of 100 hex codes to populate color inventory
   getHexCodes = () => {
     let hexCodes = [];
-    let characters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
-
-    for (var code=0; code<100; code++) {
-      let code = "";
-      for (var char=0; char<6; char++) {
-        let randIdx = Math.floor(Math.random() * characters.length);
-        code += characters[randIdx];
+    let chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
+    
+    let code, char, randIdx;
+    while (hexCodes.length < 100) {
+      code = "#";
+      
+      for (var c=0; c<6; c++) {
+        randIdx = Math.floor(Math.random() * chars.length);
+        char = chars[randIdx];
+        code += char;
       }
 
-      hexCodes.push(code);
+      if (hexCodes.indexOf(code) === -1) {
+        hexCodes.push(code);
+      }
     }
 
     this.setState({
