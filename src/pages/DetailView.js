@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Color from "../components/Color/color";
-// import "./DetailView.css";
+import "./DetailView.css";
 
 class DetailView extends Component {
     render() {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Color from "../components/Color/color";
-// import "./ListView.css";
+import "./ListView.css";
 
 class ListView extends Component {
     render() {
