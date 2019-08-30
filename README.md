@@ -2,14 +2,13 @@
   <img src="./src/images/logo-symbol.svg" alt="logo" />
 </p>
 
-# GRE Argot Tester
+# Helpful Human Interview Challenge
 **by Curtis Yungen**
 
 August 2019
 
-The GRE Argot Tester (obviously named for the acronym) is a simple web application I created to help my girlfriend study for the GRE. The program tests the user on each of the 400 hardest words commonly seen on the GRE. It allows the user to set an image and sentence for each word to aid in memorization and understanding. The user may also view hints as well as listen to each word's pronunciation. 
 
-Check out the project here: https://vocab-cjy.herokuapp.com.
+Check out the project here: https://hh-interview.herokuapp.com.
 
 <hr/>
 
@@ -17,7 +16,6 @@ Check out the project here: https://vocab-cjy.herokuapp.com.
 1) Node.js
 2) Express.js
 3) ReactJS
-4) Speech Synthesizer API
 
 ### NPM Dependencies
 1) express
@@ -31,7 +29,7 @@ Check out the project here: https://vocab-cjy.herokuapp.com.
 *Ensure that you have installed a Code Editor such as Visual Studio Code as well as Node.js.
 Installation instructions for Node.js can be found here: https://nodejs.org/en/download/*
 
-1) Visit https://github.com/curtisyungen/vocab
+1) Visit https://github.com/curtisyungen/hh-interview
 2) Click on the green button labeled Clone or download
 3) Select Download ZIP
 4) Open the ZIP file and extract its contents to the desired location on your computer
