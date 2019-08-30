@@ -7,12 +7,17 @@
 }
 
 .colorBackground {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     color: black;
     display: inline-block;
 }
 
 .colorName {
     background: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding-left: 10px;
 }
 
 .large {
