@@ -22,14 +22,18 @@ class ListView extends Component {
                 {/* PAGINATION */}
                 <nav className="paginationBar">
                     <ul className="pagination">
-                        {this.props.pages.map(page => (
-                            <li 
-                                className={`page-item page-link page-${this.props.currPage === page}`}
-                                onClick={this.props.paginate.bind(null, page)}
-                            >
-                                {page}
-                            </li>
-                        ))}
+                        {this.props.pages ? (
+                            this.props.pages.map(page => (
+                                <li 
+                                    className={`page-item page-link page-${this.props.currPage === page}`}
+                                    onClick={this.props.paginate.bind(null, page)}
+                                >
+                                    {page}
+                                </li>
+                            ))
+                        ) : (
+                            <></>
+                        )}
                     </ul>
                 </nav>
             </div>
