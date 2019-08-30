@@ -19,6 +19,7 @@
 }
 
 .small {
+    cursor: pointer;
     height: 100px;
     width: 100px;
 }
