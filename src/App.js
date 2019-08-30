@@ -85,27 +85,6 @@ class App extends Component {
     this.setState({
       color: color.toLowerCase(),
       view: "detail",
-    }, () => {
-      this.getSuggestions(color);
-    });
-  }
-
-  getSuggestions = (color) => {
-    let suggestions = [];
-    let hexCodes = this.state.hexCodes;
-    let idx = -1;
-    for (var h=0; h<hexCodes.length; h++) {
-      if (hexCodes[h] === color) {
-        idx = h;
-      }
-    }
-
-    for (var i=1; i<6; i++) {
-      suggestions.push(hexCodes[idx + i]);
-    }
-
-    this.setState({
-      suggestions: suggestions,
     });
   }
 
@@ -215,7 +194,7 @@ class App extends Component {
               <DetailView
                 color={this.state.color}
                 getColor={this.getColor}
-                suggestions={this.state.suggestions}
+                suggestions={this.state.hexCodes}
                 clearDisplay={this.clearDisplay}
               />
             } />
