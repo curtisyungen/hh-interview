@@ -1,0 +1,113 @@
+html {
+  height: 100% !important;
+  min-height: 100vh !important;
+  overflow-x: hidden;
+}
+
+body {
+  background-size: cover;
+}
+
+.curtis-btn {
+  display: block;
+  margin: 8px auto;
+  width: 200px; 
+}
+
+.curtis-text {
+  background: darkgray;
+  border-top: 1px solid black;
+  color: #000;
+  font-size: 12px;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  padding: 8px;
+}
+
+.getHintBtn {
+  font-size: 12px;
+  margin: 10px auto;
+  width: 75px;
+}
+
+.home {
+  background: rgb(242, 242, 242);
+  border: 4px double;
+  border-bottom: 0px;
+  border-top: 0px;
+  height: 100%;
+  margin: 0px auto;
+  width: 500px;
+}
+
+.logo {
+  display: inline-block;
+  height: 35px; 
+  margin-right: 10px;
+}
+
+.mainSection {
+  min-height: 170px;
+}
+
+.mainTitle {
+  background: rgb(94, 94, 94);
+  border-bottom: 1px solid black;
+  color: white;
+  line-height: 1.0;
+  margin-bottom: 0px;
+  padding: 5px;
+  text-align: left;
+}
+
+.message {
+  background: #c4c4c4;
+  border-bottom: 1px solid darkgray;
+  border-top: 1px solid darkgray;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.playAgainBtn {
+  margin-top: 50px;
+  width: 200px;
+}
+
+.prevCorrect-true {
+  background: rgb(127, 240, 127);
+  border-bottom: 1px solid darkgreen;
+  border-top: 1px solid darkgreen;
+}
+
+.prevCorrect-false {
+  background: rgb(247, 53, 53);
+  border-bottom: 1px solid darkred;
+  border-top: 1px solid darkred;
+}
+
+@media only screen and (max-width: 520px) {
+  .changeSentenceBtn {
+    display: block;
+    float: none;
+    margin: 10px auto;
+    margin-bottom: 0px;
+  }
+
+  .home {
+    width: auto;
+  }
+
+  .imageInput {
+    width: 300px;
+  }
+
+  .speakIcon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .imageInput {
+    width: 200px;
+  }
+}
