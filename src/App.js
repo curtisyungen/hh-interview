@@ -86,7 +86,11 @@ class App extends Component {
   render() {
     return (
       <Router>
+
         <div className="mainContainer">
+
+          {/* NAVBAR, SIDEBAR */
+          /* ====================================================== */}
 
           <Navbar />
 
@@ -95,21 +99,25 @@ class App extends Component {
             colorMenu={this.state.colorMenu}
           />
 
-          {/* VIEW TOGGLE BUTTONS */}
+          {/* VIEW TOGGLE BUTTONS */
+          /* ====================================================== */}
           <div className="btn-group viewBtns">
             <button
               className={`btn btn-outline-dark view-${this.state.view === "detail"}`}
               onClick={this.toggleView.bind(null, "detail")}
             >
               Detail
-          </button>
+            </button>
             <button
               className={`btn btn-outline-dark view-${this.state.view === "list"}`}
               onClick={this.toggleView.bind(null, "list")}
             >
               List
-          </button>
+            </button>
           </div>
+
+          {/* REDIRECTS */
+          /* ====================================================== */}
 
           {this.state.view === "detail" ? (
             <Redirect 
@@ -125,7 +133,10 @@ class App extends Component {
             />
           ) : (
             <></>
-          )}      
+          )}    
+
+          {/* PAGE ROUTES */
+          /* ====================================================== */}  
 
           <Switch>
             <Route exact path="/" render={() =>

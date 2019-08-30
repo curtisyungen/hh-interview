@@ -5,7 +5,7 @@ import Color from "../components/Color/color";
 class ListView extends Component {
     render() {
         return (
-            <div>
+            <div className="listView">
                 {this.props.hexCodes && this.props.hexCodes.length > 0 ? (
                     this.props.hexCodes.map(color => (
                         <Color
