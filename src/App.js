@@ -34,7 +34,6 @@ class App extends Component {
       currPage: 1,
     }, () => {
       this.getHexCodes();
-      this.setHexDisplay();
     });
   }
 
@@ -62,6 +61,7 @@ class App extends Component {
       hexCodes: hexCodes,
     }, () => {
       this.getPages();
+      this.setHexDisplay();
     });
   }
 
