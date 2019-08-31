@@ -19,7 +19,7 @@ This is my solution to the <b>Helpful Human Interview Challenge</b>.
 
 <br/>
 
-ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ
+<p align="center">ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ</p>
 
 <hr/>
 
