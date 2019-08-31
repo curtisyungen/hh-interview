@@ -7,9 +7,13 @@
 
 August 2019
 
+### Deliverables
+
 This is my solution to the Helpful Human Interview Challenge. Directions for the challenge can be found here: https://github.com/HelpfulHuman/interview-challenge.
 
 Check out my deployed project here: https://hh-interview.herokuapp.com.
+
+ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ
 
 <hr/>
 
@@ -28,7 +32,6 @@ Check out my deployed project here: https://hh-interview.herokuapp.com.
 * I'm curious to see <b>a more optimal algorithm</b> for generating non-random hex codes. 
 * I'd better utilize <b>Bootstrap</b> so I can avoid tedious media queries. 
 * I looked at some <b>GraphQL</b> tutorials but decided to leave it out for this project. I'm interested in learning more about it though. 
-
 
 <hr />
 
