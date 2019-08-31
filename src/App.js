@@ -196,6 +196,7 @@ class App extends Component {
             hexCodes={this.state.hexCodes}
             searchForColor={this.searchForColor}
             getPages={this.getPages}
+            paginate={this.paginate}
           />
 
           <Sidebar

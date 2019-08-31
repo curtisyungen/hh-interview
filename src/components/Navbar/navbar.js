@@ -66,7 +66,7 @@ class Navbar extends Component {
         let matches = [];
         let count = 0;
         if (searchTerm !== null && searchTerm !== "") {
-            while (matches.length < 10 && count < hexCodes.length) {
+            while (matches.length < 20 && count < hexCodes.length) {
                 if (hexCodes[count].indexOf(searchTerm) > -1) {
                     matches.push(hexCodes[count]);
                 }
