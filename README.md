@@ -9,9 +9,11 @@ August 2019
 
 ### Deliverables
 
-This is my solution to the Helpful Human Interview Challenge. Directions for the challenge can be found here: https://github.com/HelpfulHuman/interview-challenge.
+This is my solution to the Helpful Human Interview Challenge. 
 
-Check out my deployed project here: https://hh-interview.herokuapp.com.
+Challenge instructions: https://github.com/HelpfulHuman/interview-challenge.
+Project repository (Github): https://github.com/curtisyungen/hh-interview
+Deployed project (Heroku): https://hh-interview.herokuapp.com.
 
 ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ
 
