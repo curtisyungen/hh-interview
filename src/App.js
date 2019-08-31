@@ -89,6 +89,7 @@ class App extends Component {
   }
 
   // Calculates number of pages needed for pagination based on RESULTS_PER_PAGE and total number of hex codes
+  // codes parameter is optional and used for filtered searches
   getPages = (codes) => {
     let hexCodes = this.state.hexCodes;
     if (codes && codes.length > 0) {
@@ -149,7 +150,7 @@ class App extends Component {
       hexDisplay: filterCodes,
       view: "list",
     }, () => {
-      this.getPages();
+      this.getPages(filterCodes);
     });
   }
 
