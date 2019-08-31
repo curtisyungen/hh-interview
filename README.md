@@ -23,6 +23,7 @@ Check out my deployed project here: https://hh-interview.herokuapp.com.
 2) react-dom
 3) react-router-dom
 4) react-responsive-modal
+5) react-onclickoutside
 
 <hr/>
 
