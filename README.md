@@ -41,6 +41,7 @@ This is my solution to the <b>Helpful Human Interview Challenge</b>.
 1) Node.js
 2) Express.js
 3) ReactJS
+4) Bootstrap
 
 ### NPM Dependencies
 1) express
