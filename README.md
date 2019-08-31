@@ -11,6 +11,8 @@ August 2019
 
 This is my solution to the <b>Helpful Human Interview Challenge</b>. 
 
+#### I completed the Core, Stretch, and most of the Bonus Stretch objectives.
+
 * Challenge instructions: https://github.com/HelpfulHuman/interview-challenge.
 * Project repository (Github): https://github.com/curtisyungen/hh-interview
 * Deployed project (Heroku): https://hh-interview.herokuapp.com.
