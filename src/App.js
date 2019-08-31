@@ -146,6 +146,14 @@ class App extends Component {
     });
   }
 
+  // Displays list of colors matching user search input in List View
+  searchForColor = (matches) => {
+    this.setState({
+      hexDisplay: matches,
+      view: "list",
+    });
+  }
+
   // Chooses a random color from hex code list to display in Detail View
   getRandomColor = () => {
     let hexCodes = this.state.hexCodes;
@@ -176,7 +184,7 @@ class App extends Component {
           <Navbar 
             getColor={this.getColor}
             hexCodes={this.state.hexCodes}
-            filterColors={this.filterColors}
+            searchForColor={this.searchForColor}
           />
 
           <Sidebar
