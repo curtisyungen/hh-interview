@@ -29,6 +29,7 @@ class Sidebar extends Component {
             <div className="sidebar">
                 <button 
                     className="btn btn-light randomBtn"
+                    onClick={this.props.getRandomColor}
                 >
                     Random Color
                 </button>

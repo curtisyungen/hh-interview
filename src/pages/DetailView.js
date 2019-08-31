@@ -16,7 +16,8 @@ class DetailView extends Component {
                         />
 
                         <Suggestions 
-                            suggestions={this.props.suggestions}
+                            color={this.props.color}
+                            hexCodes={this.props.hexCodes}
                             getColor={this.props.getColor}
                         />
 

@@ -42,7 +42,7 @@ class App extends Component {
   // Generates an array of hex codes to populate color inventory
   getHexCodes = () => {
     let hexCodes = [];
-    let chars = ["00", "10", "20", "30", "40", "50", "60", "70", "80", "90"];
+    let chars = ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45"];
 
     let code;
     // colors: #000000, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #800080, #654321, #808080
@@ -119,6 +119,7 @@ class App extends Component {
     });
   }
 
+  // Filters colors according to the color chosen from Sidebar menu
   filterColors = (color) => {
     let hexCodes = this.state.hexCodes;
     let startIdx = (COLOR_MENU.indexOf(color) + 1) * COLOR_VARIATIONS;
@@ -131,6 +132,15 @@ class App extends Component {
     this.setState({
       hexDisplay: filterCodes,
     });
+  }
+
+  // Chooses a random color from hex code list to display in Detail View
+  getRandomColor = () => {
+    let hexCodes = this.state.hexCodes;
+    let randIdx = Math.floor(Math.random() * hexCodes.length);
+    let color = hexCodes[randIdx];
+
+    this.getColor(color);
   }
 
   // Clears Detail View and redirects to List View
@@ -156,6 +166,7 @@ class App extends Component {
           <Sidebar
             getColor={this.filterColors}
             colorMenu={this.state.colorMenu}
+            getRandomColor={this.getRandomColor}
           />
 
           {/* REDIRECTS */
@@ -196,7 +207,7 @@ class App extends Component {
               <DetailView
                 color={this.state.color}
                 getColor={this.getColor}
-                suggestions={this.state.hexCodes}
+                hexCodes={this.state.hexCodes}
                 clearDisplay={this.clearDisplay}
               />
             } />
