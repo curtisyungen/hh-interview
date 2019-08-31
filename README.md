@@ -13,6 +13,25 @@ Check out my deployed project here: https://hh-interview.herokuapp.com.
 
 <hr/>
 
+### Reflection
+
+Overall comments:
+* I spent about 8 hours working on this project.
+* Most time was spent on the getHexCodes algorithm which admittedly isn't very impressive. Most color shades are very similar. 
+
+What I liked: 
+* I think the interface turned out well.
+* I like the pagination.
+
+What I'd improve: 
+* I need to figure out how to make the first-time load quicker, likely by splitting up the App.js file into smaller ones.
+* I'm curious to see a more optimal algorithm for generating non-random hex codes. 
+* I'd better utilize Bootstrap so I can avoid tedious media queries. 
+* I looked at some ### GraphQL tutorials but decided to leave it out for this project. I'm interested in learning more about it though. 
+
+
+<hr />
+
 ### Technologies
 1) Node.js
 2) Express.js
@@ -43,21 +62,6 @@ Installation instructions for Node.js can be found here: https://nodejs.org/en/d
 9) The program will open locally in your browser
 
 <hr/>
-
-### Reflection
-
-My comments:
-* I spent about 8 hours working on this project.
-* Most time was spent on the getHexCodes algorithm which admittedly isn't very impressive. Most color shades are very similar. 
-
-What I liked: 
-* I think the interface turned out well.
-* I like the pagination.
-
-What I'd improve: 
-* I need to figure out how to make the first-time load quicker, likely by splitting up the App.js file into smaller ones.
-* I'm curious to see a more optimal algorithm for generating non-random hex codes. 
-* I'd better utilize Bootstrap so I can avoid tedious media queries. 
 
 ### Screenshots
 
