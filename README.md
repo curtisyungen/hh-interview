@@ -47,3 +47,5 @@ Installation instructions for Node.js can be found here: https://nodejs.org/en/d
 
 ![](./src/images/screenshot1.png)
 <br/>
+![](./src/images/screenshot2.png)
+<br/>
