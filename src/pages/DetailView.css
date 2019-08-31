@@ -15,9 +15,9 @@
     }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 600px) {
     .detailView {
-        margin-left: 25px;
+        margin-left: 100px;
         max-width: 100%;
     }
 }

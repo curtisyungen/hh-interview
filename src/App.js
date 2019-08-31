@@ -9,7 +9,7 @@ import './App.css';
 const DEFAULT_VIEW = "list";
 const DEFAULT_COLOR = "Red";
 const COLOR_MENU = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray"];
-const COLOR_VARIATIONS = 10;
+const COLOR_VARIATIONS = 15; // max value allowed is 20
 const RESULTS_PER_PAGE = 28;
 
 class App extends Component {
