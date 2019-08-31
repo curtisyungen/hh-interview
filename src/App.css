@@ -22,19 +22,3 @@ html {
   font-family: "Source Serif Pro", Times, Serif;
   position: relative;
 }
-
-.viewBtn {
-  width: 75px;
-}
-
-.viewBtns {
-  display: block !important;
-  /* position: absolute; */
-  /* right: 40px; */
-  left: 82%;
-  top: 20px;
-}
-
-.view-true {
-  background: lightgray;
-}

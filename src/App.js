@@ -44,7 +44,9 @@ class App extends Component {
     let hexCodes = [];
     let chars = [];
 
-    let increment = 5;
+    // Creates the 'characters', or the two-digit code that will 
+    // be used to alter the hex codes to make different shades of colors
+    let increment = Math.floor(100 / COLOR_VARIATIONS);
     let char = "";
     for (var i=0; i<COLOR_VARIATIONS; i++) {
       char = 0 + increment * i;
@@ -54,20 +56,20 @@ class App extends Component {
       chars.push(char);
     }
 
+    // Creates slightly different shades of each base color and appends to hexCodes
     let code;
-    // colors: #000000, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #800080, #654321, #808080
     for (var color=1; color<=9; color++) {
       for (var ch in chars) {
         switch(color) {
-          case 1: code = `#${chars[ch]}0000`; break; // darkest
-          case 2: code = `#ff${chars[ch]}00`; break; // red
-          case 3: code = `#ffa5${chars[ch]}`; break; // orange
-          case 4: code = `#ffff${chars[ch]}`; break; // yellow
-          case 5: code = `#0080${chars[ch]}`; break; // green
-          case 6: code = `#00${chars[ch]}ff`; break; // blue
-          case 7: code = `#80${chars[ch]}80`; break; // purple
-          case 8: code = `#6543${chars[ch]}`; break; // brown
-          case 9: code = `#${chars[ch]}${chars[ch]}${chars[ch]}`; break; // gray
+          case 1: code = `#${chars[ch]}0000`; break; // darkest, #000000
+          case 2: code = `#ff${chars[ch]}00`; break; // red, #ff0000
+          case 3: code = `#ffa5${chars[ch]}`; break; // orange, #ffa500
+          case 4: code = `#ffff${chars[ch]}`; break; // yellow, #ffff00
+          case 5: code = `#0080${chars[ch]}`; break; // green, #008000
+          case 6: code = `#00${chars[ch]}ff`; break; // blue, #0000ff
+          case 7: code = `#80${chars[ch]}80`; break; // purple, #800080
+          case 8: code = `#6543${chars[ch]}`; break; // brown, #654321
+          case 9: code = `#${chars[ch]}${chars[ch]}${chars[ch]}`; break; // gray, #808080
           default: code = "#ffffff";
         }
 
@@ -75,7 +77,6 @@ class App extends Component {
         if (hexCodes.indexOf(code) === -1) {
           hexCodes.push(code);
         }
-        
       }
     }
 
@@ -172,7 +173,10 @@ class App extends Component {
           {/* NAVBAR, SIDEBAR */
           /* ====================================================== */}
 
-          <Navbar />
+          <Navbar 
+            getColor={this.getColor}
+            hexCodes={this.state.hexCodes}
+          />
 
           <Sidebar
             getColor={this.filterColors}
