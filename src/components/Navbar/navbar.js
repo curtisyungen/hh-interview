@@ -38,6 +38,7 @@ class Navbar extends Component {
         if (event.key === "Enter" && searchTerm !== null && searchTerm !== "" && matches && matches.length > 0) {
             event.preventDefault();
             this.props.searchForColor(matches);
+            this.props.getPages(matches);
         }
     }
 
