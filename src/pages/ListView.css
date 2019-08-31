@@ -36,15 +36,15 @@
     font-weight: 700;
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 1200px) {
     .listView {
         margin-left: 260px;
     }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 690px) {
     .listView {
-        margin-left: 25px;
+        margin-left: 100px;
         max-width: 100%;
     }
 }
