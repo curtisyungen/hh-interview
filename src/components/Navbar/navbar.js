@@ -33,11 +33,11 @@ class Navbar extends Component {
 
     // Conducts search when Enter key is pressed
     handleKeyPress = (event) => {
-        event.preventDefault();
-
         let searchTerm = this.state.searchTerm;
-        if (event.key === "Enter" && searchTerm !== null && searchTerm !== "") {
-            this.props.filterColors(this.state.searchTerm);
+        let matches = this.state.matches;
+        if (event.key === "Enter" && searchTerm !== null && searchTerm !== "" && matches && matches.length > 0) {
+            event.preventDefault();
+            this.props.searchForColor(matches);
         }
     }
 
@@ -100,7 +100,7 @@ class Navbar extends Component {
                         type="search" 
                         placeholder="Search for hex code" 
                         aria-label="Search"
-                        // onKeyPress={this.handleKeyPress}
+                        onKeyPress={this.handleKeyPress}
                         onChange={this.handleInputChange}
                         value={this.state.searchTerm}
                     />
