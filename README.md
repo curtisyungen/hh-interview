@@ -15,19 +15,19 @@ Check out my deployed project here: https://hh-interview.herokuapp.com.
 
 ### Reflection
 
-Overall comments:
+#### Overall comments:
 * I spent about 8 hours working on this project.
 * Most time was spent on the getHexCodes algorithm which admittedly isn't very impressive. Most color shades are very similar. 
 
-What I liked: 
+#### What I liked: 
 * I think the interface turned out well.
 * I like the pagination.
 
-What I'd improve: 
-* I need to figure out how to make the first-time load quicker, likely by splitting up the App.js file into smaller ones.
-* I'm curious to see a more optimal algorithm for generating non-random hex codes. 
-* I'd better utilize Bootstrap so I can avoid tedious media queries. 
-* I looked at some <p style="color: blue">GraphQL</p> tutorials but decided to leave it out for this project. I'm interested in learning more about it though. 
+#### What I'd improve: 
+* I need to figure out how to make the <b>first-time load</b> quicker, likely by splitting up the App.js file into smaller ones.
+* I'm curious to see <b>a more optimal algorithm</b> for generating non-random hex codes. 
+* I'd better utilize <b>Bootstrap</b> so I can avoid tedious media queries. 
+* I looked at some <b>GraphQL</b> tutorials but decided to leave it out for this project. I'm interested in learning more about it though. 
 
 
 <hr />
