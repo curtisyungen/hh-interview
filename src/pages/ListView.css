@@ -35,3 +35,16 @@
     border-bottom: 2px solid black;
     font-weight: 700;
 }
+
+@media only screen and (max-width: 990px) {
+    .listView {
+        margin-left: 260px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .listView {
+        margin-left: 25px;
+        max-width: 100%;
+    }
+}

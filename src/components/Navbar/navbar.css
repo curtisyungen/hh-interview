@@ -2,3 +2,7 @@
     color: black;
     width: 100%;
 }
+
+.searchBox {
+    padding-right: 25px;
+}
