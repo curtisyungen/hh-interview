@@ -176,6 +176,7 @@ class App extends Component {
           <Navbar 
             getColor={this.getColor}
             hexCodes={this.state.hexCodes}
+            filterColors={this.filterColors}
           />
 
           <Sidebar
