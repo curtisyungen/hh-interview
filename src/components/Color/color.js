@@ -5,7 +5,7 @@ class Color extends Component {
     render() {
         return (
             this.props.color ? (
-                <div className="color">
+                <div className={`color color-${this.props.size}`}>
                     <div 
                         className={`colorBackground ${this.props.size}`} 
                         style={{background: this.props.color}}
