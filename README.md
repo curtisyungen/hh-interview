@@ -46,8 +46,7 @@ This is my solution to the <b>Helpful Human Interview Challenge</b>.
 1) express
 2) react-dom
 3) react-router-dom
-4) react-responsive-modal
-5) react-onclickoutside
+4) react-onclickoutside
 
 <hr/>
 
