@@ -89,8 +89,12 @@ class App extends Component {
   }
 
   // Calculates number of pages needed for pagination based on RESULTS_PER_PAGE and total number of hex codes
-  getPages = () => {
+  getPages = (codes) => {
     let hexCodes = this.state.hexCodes;
+    if (codes && codes.length > 0) {
+      hexCodes = codes;
+    }
+    
     let pages = [];
 
     for (var c=0; c <= (hexCodes.length / RESULTS_PER_PAGE); c++) {
@@ -104,6 +108,7 @@ class App extends Component {
 
   // Gets hexCodes to display page
   // Number of results shown = RESULTS_PER_PAGE
+  // page parameter = current page number
   paginate = (page) => {
     let currPage = page;
     let hexCodes = this.state.hexCodes;
@@ -143,6 +148,8 @@ class App extends Component {
     this.setState({
       hexDisplay: filterCodes,
       view: "list",
+    }, () => {
+      this.getPages();
     });
   }
 
@@ -169,6 +176,8 @@ class App extends Component {
       color: null,
       suggestions: null,
       view: "list",
+    }, () => {
+      this.getPages();
     });
   }
 
@@ -185,6 +194,7 @@ class App extends Component {
             getColor={this.getColor}
             hexCodes={this.state.hexCodes}
             searchForColor={this.searchForColor}
+            getPages={this.getPages}
           />
 
           <Sidebar
