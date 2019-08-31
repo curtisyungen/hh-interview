@@ -9,7 +9,8 @@ import './App.css';
 const DEFAULT_VIEW = "list";
 const DEFAULT_COLOR = "Red";
 const COLOR_MENU = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray"];
-const RESULTS_PER_PAGE = 35;
+const COLOR_VARIATIONS = 10;
+const RESULTS_PER_PAGE = 28;
 
 class App extends Component {
 
@@ -38,28 +39,29 @@ class App extends Component {
     });
   }
 
-  // Generates an array of 100 hex codes to populate color inventory
+  // Generates an array of hex codes to populate color inventory
   getHexCodes = () => {
     let hexCodes = [];
-    let code;
-    let chars = ["00", "20", "40", "60", "80", "aa", "bb", "cc", "dd", "ee", "ff"];
+    let chars = ["00", "10", "20", "30", "40", "50", "60", "70", "80", "90"];
 
-    // #000000, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #800080, #654321, #808080
-    for (var i=1; i<10; i++) {
+    let code;
+    // colors: #000000, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #800080, #654321, #808080
+    for (var color=1; color<=9; color++) {
       for (var ch in chars) {
-        switch(i) {
-          case 1: code = `#${chars[ch]}0000`; break;
-          case 2: code = `#ff${chars[ch]}00`; break;
-          case 3: code = `#ffa5${chars[ch]}`; break;
-          case 4: code = `#ffff${chars[ch]}`; break;
-          case 5: code = `#0080${chars[ch]}`; break;
-          case 6: code = `#00${chars[ch]}ff`; break;
-          case 7: code = `#80${chars[ch]}80`; break;
-          case 8: code = `#6543${chars[ch]}`; break;
-          case 9: code = `#${chars[ch]}${chars[ch]}${chars[ch]}`; break;
+        switch(color) {
+          case 1: code = `#${chars[ch]}0000`; break; // darkest
+          case 2: code = `#ff${chars[ch]}00`; break; // red
+          case 3: code = `#ffa5${chars[ch]}`; break; // orange
+          case 4: code = `#ffff${chars[ch]}`; break; // yellow
+          case 5: code = `#0080${chars[ch]}`; break; // green
+          case 6: code = `#00${chars[ch]}ff`; break; // blue
+          case 7: code = `#80${chars[ch]}80`; break; // purple
+          case 8: code = `#6543${chars[ch]}`; break; // brown
+          case 9: code = `#${chars[ch]}${chars[ch]}${chars[ch]}`; break; // gray
           default: code = "#ffffff";
         }
 
+        // Ensure code is unique
         if (hexCodes.indexOf(code) === -1) {
           hexCodes.push(code);
         }
@@ -70,12 +72,12 @@ class App extends Component {
     this.setState({
       hexCodes: hexCodes,
     }, () => {
-      this.getPages();
-      this.paginate(this.state.currPage);
+      this.getPages();                    // Calculate number of pages needed
+      this.paginate(this.state.currPage); // Display appropriate number of results on page
     });
   }
 
-  // Calculates number of pages needed for pagination based on RESULTS_PER_PAGE
+  // Calculates number of pages needed for pagination based on RESULTS_PER_PAGE and total number of hex codes
   getPages = () => {
     let hexCodes = this.state.hexCodes;
     let pages = [];
@@ -89,33 +91,8 @@ class App extends Component {
     });
   }
 
-  // Sets color when option is clicked in Sidebar menu
-  // Receives color name as string
-  // Toggles Detail View
-  getColor = (color) => {
-    this.setState({
-      color: color.toLowerCase(),
-      view: "detail",
-    });
-  }
-
-  // Toggles between Detail and List views
-  toggleView = (view) => {
-    this.setState({
-      view: view,
-    });
-  }
-
-  // Clears Detail View and redirects to List View
-  clearDisplay = () => {
-    this.setState({
-      color: null,
-      suggestions: null,
-      view: "list",
-    });
-  }
-
-  // Gets hexCode results to display on current page
+  // Gets hexCodes to display page
+  // Number of results shown = RESULTS_PER_PAGE
   paginate = (page) => {
     let currPage = page;
     let hexCodes = this.state.hexCodes;
@@ -131,6 +108,39 @@ class App extends Component {
       hexDisplay: hexDisplay,
     });
   }
+  
+  // Sets color when option is clicked in Sidebar menu
+  // Receives color name as string
+  // Toggles Detail View
+  getColor = (color) => {
+    this.setState({
+      color: color.toLowerCase(),
+      view: "detail",
+    });
+  }
+
+  filterColors = (color) => {
+    let hexCodes = this.state.hexCodes;
+    let startIdx = (COLOR_MENU.indexOf(color) + 1) * COLOR_VARIATIONS;
+
+    let filterCodes = [];
+    for (var i=0; i<COLOR_VARIATIONS; i++) {
+      filterCodes.push(hexCodes[startIdx + i]);
+    }
+
+    this.setState({
+      hexDisplay: filterCodes,
+    });
+  }
+
+  // Clears Detail View and redirects to List View
+  clearDisplay = () => {
+    this.setState({
+      color: null,
+      suggestions: null,
+      view: "list",
+    });
+  }
 
   render() {
     return (
@@ -144,7 +154,7 @@ class App extends Component {
           <Navbar />
 
           <Sidebar
-            getColor={this.getColor}
+            getColor={this.filterColors}
             colorMenu={this.state.colorMenu}
           />
 
