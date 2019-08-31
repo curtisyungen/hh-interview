@@ -31,7 +31,8 @@ This is my solution to the <b>Helpful Human Interview Challenge</b>.
 
 #### What I'd improve: 
 * I need to figure out how to make the <b>first-time load</b> quicker, likely by splitting up the App.js file into smaller ones.
-* I'm curious to see <b>a more optimal algorithm</b> for generating non-random hex codes. 
+* I'm curious to see <b>a more optimal algorithm</b> for generating non-random hex codes.
+* The <b>shade filters</b> aren't perfect. That is, there are some purples grouped as browns, grays grouped in purples, etc.
 * I'd better utilize <b>Bootstrap</b> so I can avoid tedious media queries. 
 * I looked at some <b>GraphQL</b> tutorials but decided to leave it out for this project. I'm interested in learning more about it though. 
 
