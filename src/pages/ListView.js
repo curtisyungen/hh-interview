@@ -25,7 +25,7 @@ class ListView extends Component {
                         {this.props.pages ? (
                             this.props.pages.map(page => (
                                 <li 
-                                    className={`page-item page-link page-${this.props.currPage === page}`}
+                                    className={`page-item page-${this.props.currPage === page}`}
                                     onClick={this.props.paginate.bind(null, page)}
                                 >
                                     {page}

@@ -19,6 +19,7 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  font-family: "Source Serif Pro", Times, Serif;
   position: relative;
 }
 

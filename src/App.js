@@ -42,7 +42,17 @@ class App extends Component {
   // Generates an array of hex codes to populate color inventory
   getHexCodes = () => {
     let hexCodes = [];
-    let chars = ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45"];
+    let chars = [];
+
+    let increment = 5;
+    let char = "";
+    for (var i=0; i<COLOR_VARIATIONS; i++) {
+      char = 0 + increment * i;
+      if (char < 10) {
+        char = `0${char}`;
+      }
+      chars.push(char);
+    }
 
     let code;
     // colors: #000000, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #800080, #654321, #808080

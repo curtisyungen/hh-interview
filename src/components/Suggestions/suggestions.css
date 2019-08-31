@@ -2,8 +2,4 @@
     color: black;
     display: flex;
     flex-direction: row;
-    max-width: 800px;
-    overflow-y: hidden;
-    scrollbar-width: 0px !important;
-    white-space: normal;
 }
