@@ -131,6 +131,7 @@ class App extends Component {
 
     this.setState({
       hexDisplay: filterCodes,
+      view: "list",
     });
   }
 
