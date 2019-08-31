@@ -27,7 +27,7 @@ What I'd improve:
 * I need to figure out how to make the first-time load quicker, likely by splitting up the App.js file into smaller ones.
 * I'm curious to see a more optimal algorithm for generating non-random hex codes. 
 * I'd better utilize Bootstrap so I can avoid tedious media queries. 
-* I looked at some <b style="color: blue">GraphQL</b> tutorials but decided to leave it out for this project. I'm interested in learning more about it though. 
+* I looked at some <p style="color: blue">GraphQL</p> tutorials but decided to leave it out for this project. I'm interested in learning more about it though. 
 
 
 <hr />
