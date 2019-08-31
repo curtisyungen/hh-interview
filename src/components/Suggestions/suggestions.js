@@ -30,11 +30,14 @@ class Suggestions extends Component {
             return;
         }
 
-        let idx = hexCodes.indexOf(color);
+        let startIdx = Math.max(hexCodes.indexOf(color) - 3, 0);
+        let endIdx = Math.min(hexCodes.length, startIdx + 6);
 
         let suggestions = [];
-        for (var c=1; c<6; c++) {
-            suggestions.push(hexCodes[idx + c]);
+        for (var c=startIdx; c<endIdx; c++) {
+            if (hexCodes[c] !== color) {
+                suggestions.push(hexCodes[c]);
+            }
         }
 
         this.setState({
