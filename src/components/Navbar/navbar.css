@@ -1,5 +1,6 @@
 .navbar {
     color: black;
+    min-width: 320px;
     width: 100%;
 }
 

@@ -31,7 +31,7 @@
     width: 250px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 690px) {
     .menuItem {
       font-size: 16px;
     }
