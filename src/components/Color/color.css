@@ -22,7 +22,9 @@
     background: #fff;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    height: 40px;
+    font-size: 18px;
+    height: auto;
+    padding-bottom: 5px;
 }
 
 .large {
@@ -36,9 +38,30 @@
     width: 120px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
     .large {
         height: 400px;
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    .large {
+        height: 300px;
         width: 400px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .large {
+        height: 250px;
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .large {
+        height: 200px;
+        width: 200px;
     }
 }
