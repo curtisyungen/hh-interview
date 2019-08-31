@@ -14,8 +14,10 @@ class Navbar extends Component {
         }   
     }
 
+    // Sets user search input as "searchTerm" in state
     handleInputChange = (event) => {
         const {name, value} = event.target;
+        event.preventDefault();
 
         this.setState({
             [name]: value,
@@ -29,6 +31,17 @@ class Navbar extends Component {
         });
     }
 
+    // Conducts search when Enter key is pressed
+    handleKeyPress = (event) => {
+        event.preventDefault();
+
+        let searchTerm = this.state.searchTerm;
+        if (event.key === "Enter" && searchTerm !== null && searchTerm !== "") {
+            this.props.filterColors(this.state.searchTerm);
+        }
+    }
+
+    // Displays Search Suggestions
     showSuggestions = () => {
         this.setState({
             showSuggestions: true,
@@ -37,12 +50,14 @@ class Navbar extends Component {
         });
     }
 
+    // Hides Search Suggestions
     hideSuggestions = () => {
         this.setState({
             showSuggestions: false,
         });
     }
 
+    // Gets list of hex codes that include search term
     getSuggestions = () => {
         let searchTerm = this.state.searchTerm;
         let hexCodes = this.props.hexCodes;
@@ -64,6 +79,7 @@ class Navbar extends Component {
         });
     }
 
+    // Selects a match from Search Suggestions and hides suggestions
     selectMatch = (match) => {
         this.hideSuggestions();
 
@@ -84,6 +100,7 @@ class Navbar extends Component {
                         type="search" 
                         placeholder="Search for hex code" 
                         aria-label="Search"
+                        // onKeyPress={this.handleKeyPress}
                         onChange={this.handleInputChange}
                         value={this.state.searchTerm}
                     />

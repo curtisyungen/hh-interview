@@ -3,9 +3,16 @@ import onClickOutside from "react-onclickoutside";
 import "./searchSuggestions.css";
 
 class SearchSuggestions extends Component {
+
     handleClickOutside = (event) => {
         event.preventDefault();
         this.props.hideSuggestions();
+    }
+
+    // Selects match from Search Suggestions and hides suggestions
+    selectMatch = (match) => {
+        this.props.selectMatch(match);
+        this.props.getColor(match);
     }
 
     render() {
@@ -16,7 +23,7 @@ class SearchSuggestions extends Component {
                         <div 
                             key={match}
                             className="suggestion"
-                            onClick={this.props.getColor.bind(null, match)}
+                            onClick={this.selectMatch.bind(null, match)}
                         >
                             {match}
                         </div>
