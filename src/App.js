@@ -93,6 +93,9 @@ class App extends Component {
   // codes parameter is optional and used for filtered searches
   getPages = (codes) => {
     let hexCodes = this.state.hexCodes;
+    
+    // If codes parameter isn't NULL, use codes passed into function to calculate number of pages
+    // Otherwise, use all codes from hexCodes for page calculation
     if (codes && codes.length > 0) {
       hexCodes = codes;
     }
@@ -108,7 +111,7 @@ class App extends Component {
     });
   }
 
-  // Gets hexCodes to display page
+  // Gets hexCodes to display on page
   // Number of results shown = RESULTS_PER_PAGE
   // page parameter = current page number
   paginate = (page) => {
@@ -127,9 +130,8 @@ class App extends Component {
     });
   }
   
-  // Sets color when option is clicked in Sidebar menu
   // Receives color name as string
-  // Toggles Detail View
+  // Opens color in Detail View
   getColor = (color) => {
     this.setState({
       color: color.toLowerCase(),
@@ -138,6 +140,7 @@ class App extends Component {
   }
 
   // Filters colors according to the color chosen from Sidebar menu
+  // Displays in List View
   filterColors = (color) => {
     let hexCodes = this.state.hexCodes;
     let startIdx = (COLOR_MENU.indexOf(color) + 1) * COLOR_VARIATIONS;
