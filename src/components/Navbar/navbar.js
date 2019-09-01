@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import SearchSuggestions from "../SearchSuggestions/searchSuggestions";
 import "./navbar.css";
 
+const MAX_SEARCH_RESULTS = 28;
+
 class Navbar extends Component {
     constructor(props) {
         super(props);
@@ -66,7 +68,7 @@ class Navbar extends Component {
         let matches = [];
         let count = 0;
         if (searchTerm !== null && searchTerm !== "") {
-            while (matches.length < 20 && count < hexCodes.length) {
+            while (matches.length < MAX_SEARCH_RESULTS && count < hexCodes.length) {
                 if (hexCodes[count].indexOf(searchTerm) > -1) {
                     matches.push(hexCodes[count]);
                 }
@@ -103,6 +105,7 @@ class Navbar extends Component {
                         aria-label="Search"
                         onKeyPress={this.handleKeyPress}
                         onChange={this.handleInputChange}
+                        onFocus={this.showSuggestions}
                         value={this.state.searchTerm}
                     />
                 </form>
