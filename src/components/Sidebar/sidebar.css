@@ -1,3 +1,7 @@
+.allBtn {
+  margin-bottom: 10px !important;
+}
+
 .colorMenu {
     cursor: pointer;
 }
@@ -7,7 +11,7 @@
   line-height: 2.0;
 }
 
-.randomBtn {
+.allBtn, .randomBtn {
   background: #fff;
   border: 1px solid black;
   border-radius: 8px;
@@ -36,9 +40,9 @@
       font-size: 16px;
     }
 
-    .randomBtn {
+    .allBtn, .randomBtn {
       font-size: 14px;
-      width: auto;
+      width: 72px;
     }
 
     .sidebar {

@@ -28,6 +28,12 @@ class Sidebar extends Component {
         return (
             <div className="sidebar">
                 <button 
+                    className="btn btn-light allBtn"
+                    onClick={this.props.getAllColors}
+                >
+                    All Colors
+                </button>
+                <button 
                     className="btn btn-light randomBtn"
                     onClick={this.props.getRandomColor}
                 >
