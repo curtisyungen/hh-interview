@@ -22,6 +22,9 @@ class Suggestions extends Component {
         }
     }
 
+    // Gets five color suggestions for display in Detail View
+    // Uses colors from the left and right of subject color,
+    // not including subject color
     getSuggestions = () => {
         let hexCodes = this.props.hexCodes;
         let color = this.props.color;
