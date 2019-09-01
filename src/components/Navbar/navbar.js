@@ -98,7 +98,7 @@ class Navbar extends Component {
                 <form className="form-inline searchBox">
                     <input 
                         autoComplete="off"
-                        className="form-control mr-sm-2" 
+                        className="form-control" 
                         name="searchTerm"
                         type="search" 
                         placeholder="Search for hex code" 
