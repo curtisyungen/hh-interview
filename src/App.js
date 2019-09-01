@@ -82,6 +82,7 @@ class App extends Component {
 
     this.setState({
       hexCodes: hexCodes,
+      view: "list",
     }, () => {
       this.getPages();                    // Calculate number of pages needed
       this.paginate(this.state.currPage); // Display appropriate number of results on page
@@ -203,6 +204,7 @@ class App extends Component {
             getColor={this.filterColors}
             colorMenu={this.state.colorMenu}
             getRandomColor={this.getRandomColor}
+            getAllColors={this.getHexCodes}
           />
 
           {/* REDIRECTS */
