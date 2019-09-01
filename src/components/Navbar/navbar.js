@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchSuggestions from "../SearchSuggestions/searchSuggestions";
 import "./navbar.css";
 
-const MAX_SEARCH_RESULTS = 28;
+const MAX_SEARCH_RESULTS = 21;
 
 class Navbar extends Component {
     constructor(props) {
